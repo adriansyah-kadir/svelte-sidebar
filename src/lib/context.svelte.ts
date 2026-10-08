@@ -29,6 +29,8 @@ export class SidebarContext extends Context {
       : "horizontal"
   }
 
+  hasBackdrop = $state(false)
+
   constructor(opts: SidebarOpts = {}) {
     super()
     this.mode = $derived.by(opts.mode ?? (() => "sidebar"))

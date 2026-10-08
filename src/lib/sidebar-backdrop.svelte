@@ -6,6 +6,11 @@
     $props();
   const ctx = SidebarContext.get();
   const active = $derived(ctx.mode === "overlay" && ctx.open);
+
+  $effect(() => {
+    ctx.hasBackdrop = true;
+    return () => (ctx.hasBackdrop = false);
+  });
 </script>
 
 <svelte:window

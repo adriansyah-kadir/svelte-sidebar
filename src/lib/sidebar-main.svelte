@@ -11,7 +11,7 @@
 <main
   {...props}
   {...ctx.props}
-  inert={ctx.mode === "overlay" && ctx.open}
+  inert={ctx.mode === "overlay" && ctx.open && ctx.hasBackdrop}
   data-slot="sidebar-main"
 >
   {@render props.children?.()}
