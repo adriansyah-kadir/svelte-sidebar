@@ -8,8 +8,8 @@
   const ctx = SidebarContext.get();
 </script>
 
-<aside {...props} {...ctx.props} inert={!ctx.open} data-slot="sidebar-aside">
-  <div {...ctx.props} data-slot="sidebar-aside-wrapper">
+<aside {...ctx.props} inert={!ctx.open} data-slot="sidebar-aside">
+  <div {...props} {...ctx.props} data-slot="sidebar-aside-wrapper">
     {@render props.children?.()}
   </div>
 </aside>
@@ -18,14 +18,13 @@
   div {
     display: flex;
     flex: 1 1 auto;
-    min-width: 0;
-    min-height: 0;
 
     &[data-orientation="vertical"] {
       flex-direction: column;
       max-width: fit-content;
       &[data-expand="false"] {
         max-width: var(--shrink-size);
+        min-width: var(--shrink-size);
       }
     }
     &[data-orientation="horizontal"] {
@@ -33,6 +32,7 @@
       max-height: fit-content;
       &[data-expand="false"] {
         max-height: var(--shrink-size);
+        min-height: var(--shrink-size);
       }
     }
   }

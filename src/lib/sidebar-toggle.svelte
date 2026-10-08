@@ -14,6 +14,7 @@
 
 <button
   {...props}
+  {...ctx.props}
   type="button"
   onclick={(ev) => {
     props.onclick?.(ev);
