@@ -18,21 +18,21 @@
   div {
     display: flex;
     flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
 
     &[data-orientation="vertical"] {
       flex-direction: column;
-      max-width: fit-content;
+      width: var(--expand-size);
       &[data-expand="false"] {
-        max-width: var(--shrink-size);
-        min-width: var(--shrink-size);
+        width: var(--shrink-size);
       }
     }
     &[data-orientation="horizontal"] {
       flex-direction: row;
-      max-height: fit-content;
+      height: var(--expand-size);
       &[data-expand="false"] {
-        max-height: var(--shrink-size);
-        min-height: var(--shrink-size);
+        height: var(--shrink-size);
       }
     }
   }

@@ -13,6 +13,7 @@
     mode?: SidebarMode;
     placement?: SidebarPlacement;
     shrinkSize?: string;
+    expandSize?: string;
   };
 
   let {
@@ -21,6 +22,7 @@
     expand = $bindable(true),
     placement = "left",
     shrinkSize = "3rem",
+    expandSize = "15rem",
     ...props
   }: Props = $props();
 
@@ -42,6 +44,7 @@
   {...props}
   {...ctx.props}
   style:--shrink-size={shrinkSize}
+  style:--expand-size={expandSize}
   data-slot="sidebar-root"
 >
   {@render props.children?.()}
