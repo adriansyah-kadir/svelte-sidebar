@@ -18,8 +18,8 @@
 </main>
 
 <style>
-  main {
-    flex-grow: 1;
-    overflow: auto;
-  }
+  /* main { */
+    /* flex-grow: 1; */
+    /* overflow: auto; */
+  /* } */
 </style>

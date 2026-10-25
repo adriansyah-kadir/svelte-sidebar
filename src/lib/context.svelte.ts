@@ -22,11 +22,11 @@ export class SidebarContext extends Context {
 
   readonly mode: SidebarMode
   readonly placement: SidebarPlacement
-  get orientation() {
+  get axis() {
     return this.placement === "left"
       || this.placement === "right"
-      ? "vertical"
-      : "horizontal"
+      ? "x"
+      : "y"
   }
 
   hasBackdrop = $state(false)
@@ -52,7 +52,7 @@ export class SidebarContext extends Context {
       "data-open": this.open,
       "data-expand": this.expand,
       "data-mode": this.mode,
-      "data-orientation": this.orientation,
+      "data-axis": this.axis,
       "data-placement": this.placement,
     }
   }

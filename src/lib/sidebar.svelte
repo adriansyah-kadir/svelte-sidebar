@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { HTMLAttributes } from "svelte/elements";
+  import "./style.css"
+
   import {
     SidebarContext,
     type SidebarMode,
@@ -51,64 +53,67 @@
 </div>
 
 <style>
-  div {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
+  /* div { */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* overflow: hidden; */
 
-    &[data-mode="sidebar"] {
-      &[data-orientation="vertical"] { flex-direction: row; }
-      &[data-orientation="horizontal"] { flex-direction: column; }
+    /* &[data-mode="sidebar"] { */
+      /* display: flex; */
 
-      &[data-placement="left"] > :global([data-slot="sidebar-aside"]),
-      &[data-placement="top"] > :global([data-slot="sidebar-aside"]) {
-        order: -999;
-      }
-      &[data-placement="right"] > :global([data-slot="sidebar-aside"]),
-      &[data-placement="bottom"] > :global([data-slot="sidebar-aside"]) {
-        order: 999;
-      }
-    }
+      /* &[data-axis="x"] { flex-direction: row; } */
+      /* &[data-axis="y"] { flex-direction: column; } */
 
-    &[data-mode="overlay"] {
-      & > :global([data-slot="sidebar-aside"]) {
-        position: absolute;
-        z-index: 2;
-      }
+      /* &[data-placement="left"] > :global([data-slot="sidebar-aside"]), */
+      /* &[data-placement="top"] > :global([data-slot="sidebar-aside"]) { */
+        /* order: -999; */
+      /* } */
 
-      & > :global([data-slot="sidebar-backdrop"]) {
-        z-index: 1;
-      }
+      /* &[data-placement="right"] > :global([data-slot="sidebar-aside"]), */
+      /* &[data-placement="bottom"] > :global([data-slot="sidebar-aside"]) { */
+        /* order: 999; */
+      /* } */
+    /* } */
 
-      &[data-orientation="vertical"] > :global([data-slot="sidebar-aside"]) {
-        height: 100%;
-      }
+    /* &[data-mode="overlay"] { */
+      /* position: relative; */
 
-      &[data-orientation="horizontal"] > :global([data-slot="sidebar-aside"]) {
-        width: 100%;
-      }
+      /* & > :global([data-slot="sidebar-aside"]) { */
+        /* position: absolute; */
+        /* z-index: 2; */
+      /* } */
 
-      &[data-placement="top"] > :global([data-slot="sidebar-aside"]) {
-        top: 0;
-        left: 0;
-      }
+      /* & > :global([data-slot="sidebar-backdrop"]) { */
+        /* z-index: 1; */
+      /* } */
 
-      &[data-placement="bottom"] > :global([data-slot="sidebar-aside"]) {
-        bottom: 0;
-        left: 0;
-      }
+      /* &[data-axis="y"] > :global([data-slot="sidebar-aside"]) { */
+        /* height: 100%; */
+      /* } */
 
-      &[data-placement="left"] > :global([data-slot="sidebar-aside"]) {
-        top: 0;
-        left: 0;
-      }
+      /* &[data-axis="x"] > :global([data-slot="sidebar-aside"]) { */
+        /* width: 100%; */
+      /* } */
 
-      &[data-placement="right"] > :global([data-slot="sidebar-aside"]) {
-        top: 0;
-        right: 0;
-      }
-    }
-  }
+      /* &[data-placement="top"] > :global([data-slot="sidebar-aside"]) { */
+        /* top: 0; */
+        /* left: 0; */
+      /* } */
+
+      /* &[data-placement="bottom"] > :global([data-slot="sidebar-aside"]) { */
+        /* bottom: 0; */
+        /* left: 0; */
+      /* } */
+
+      /* &[data-placement="left"] > :global([data-slot="sidebar-aside"]) { */
+        /* top: 0; */
+        /* left: 0; */
+      /* } */
+
+      /* &[data-placement="right"] > :global([data-slot="sidebar-aside"]) { */
+        /* top: 0; */
+        /* right: 0; */
+      /* } */
+    /* } */
+  /* } */
 </style>

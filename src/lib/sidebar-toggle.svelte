@@ -15,6 +15,7 @@
 <button
   {...props}
   {...ctx.props}
+  data-slot="sidebar-toggle"
   type="button"
   onclick={(ev) => {
     props.onclick?.(ev);
