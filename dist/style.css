@@ -1,0 +1,119 @@
+[data-slot="sidebar-root"] {
+  &[data-mode="sidebar"] {
+    display: flex;
+
+    &[data-axis="y"] {
+      flex-direction: column;
+    }
+  }
+
+  &[data-mode="overlay"] {
+    position: relative;
+
+    & [data-slot="sidebar-aside"] {
+      position: absolute;
+
+      &[data-placement="right"] {
+        top: 0;
+        right: 0;
+      }
+
+      &[data-placement="left"] {
+        top: 0;
+        left: 0;
+      }
+
+      &[data-placement="top"] {
+        top: 0;
+        left: 0;
+      }
+
+      &[data-placement="bottom"] {
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+[data-slot="sidebar-main"] {
+  flex: 1 1 auto;
+  overflow: auto;
+
+  &:is([data-placement="left"], [data-placement="top"]) {
+    order: 999;
+  }
+
+  &:is([data-placement="right"], [data-placement="bottom"]) {
+    order: -999;
+  }
+}
+
+[data-slot="sidebar-aside"] {
+  flex-shrink: 0;
+  display: flex;
+  overflow: hidden;
+  
+  &:is([data-placement="left"], [data-placement="top"]) {
+    justify-content: end;
+  }
+
+  &[data-axis="x"] {
+    height: 100%;
+
+    &[data-open="false"] {
+      width: 0;
+    }
+  }
+
+  &[data-axis="y"] {
+    width: 100%;
+
+    &[data-open="false"] {
+      height: 0;
+    }
+  }
+}
+
+[data-slot="sidebar-aside-wrapper"] {
+  overflow: hidden;
+  flex-grow: 1;
+  display: flex;
+  flex-shrink: 0;
+
+  &[data-axis="y"] {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  &[data-axis="x"] {
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+[data-slot="sidebar-content"] {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow: hidden;
+
+  &[data-axis="x"] {
+    overflow-y: auto;
+    flex-direction: column;
+  }
+
+  &[data-axis="y"] {
+    overflow-x: auto;
+    flex-direction: row;
+  }
+}
+
+[data-slot="sidebar-item"] {
+  flex-shrink: 0;
+  width: var(--expand-size);
+
+  &[data-expand="false"] {
+    width: var(--shrink-size);
+  }
+}
